@@ -2,7 +2,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
   outputs = { nixpkgs, ... }: {
-    dotnetShell = sdks: tools: nixpkgs.mkShell rec {
+    dotnetShell = sdks: tools: nixpkgs.lib.mkShell rec {
       dotnetPkg = nixpkgs.dotnetCorePackages.combine (sdks nixpkgs.dotnetCorePackages);
 
       deps = with nixpkgs; [
