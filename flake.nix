@@ -1,11 +1,9 @@
 {
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  outputs = { self, ... }: {
+    dotnetShell = pkgs: sdks: tools: pkgs.lib.mkShell rec {
+      dotnetPkg = pkgs.dotnetCorePackages.combine (sdks pkgs.dotnetCorePackages);
 
-  outputs = { nixpkgs, ... }: {
-    dotnetShell = sdks: tools: nixpkgs.lib.mkShell rec {
-      dotnetPkg = nixpkgs.dotnetCorePackages.combine (sdks nixpkgs.dotnetCorePackages);
-
-      deps = with nixpkgs; [
+      deps = with pkgs; [
         zlib
         zlib.dev
         openssl
@@ -18,11 +16,11 @@
         )
       ];
 
-      NIX_LD_LIBRARY_PATH = with nixpkgs; lib.makeLibraryPath ([
+      NIX_LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath ([
         stdenv.cc.cc
       ] ++ deps);
-      NIX_LD = "${nixpkgs.stdenv.cc.libc_bin}/bin/ld.so";
-      packages = with nixpkgs; [ 
+      NIX_LD = "${pkgs.stdenv.cc.libc_bin}/bin/ld.so";
+      packages = with pkgs; [ 
         omnisharp-roslyn
         netcoredbg
         msbuild
