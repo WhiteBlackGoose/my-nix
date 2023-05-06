@@ -1,7 +1,7 @@
 {
   outputs = { self, ... }: {
-    dotnetShell = pkgs: sdks: tools: pkgs.lib.mkShell rec {
-      dotnetPkg = pkgs.dotnetCorePackages.combine (sdks pkgs.dotnetCorePackages);
+    dotnetShell = pkgs: sdks: tools: pkgs.mkShell rec {
+      dotnetPkg = pkgs.dotnetCorePackages.combinePackages (sdks pkgs.dotnetCorePackages);
 
       deps = with pkgs; [
         zlib

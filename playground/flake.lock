@@ -3,7 +3,7 @@
     "my-nix": {
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-qoIDR96Hb7WH0BJCQLI0qZlU7Q41ksyRXg2XTb37qbw=",
+        "narHash": "sha256-2KO3JXKdUS6gYpxKBI3KOLHHWy2h70JYWhfI8BEZpP0=",
         "path": "..",
         "type": "path"
       },
