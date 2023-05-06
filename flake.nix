@@ -3,7 +3,7 @@
 
   outputs = { nixpkgs, ... }: {
     dotnetShell = sdks: tools: nixpkgs.mkShell rec {
-      dotnetPkg = sdks nixpkgs.dotnetCorePackages;
+      dotnetPkg = nixpkgs.dotnetCorePackages.combine (sdks nixpkgs.dotnetCorePackages);
 
       deps = with nixpkgs; [
         zlib
