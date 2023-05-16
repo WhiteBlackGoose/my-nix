@@ -2,13 +2,13 @@
   "nodes": {
     "my-nix": {
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-2KO3JXKdUS6gYpxKBI3KOLHHWy2h70JYWhfI8BEZpP0=",
-        "path": "..",
+        "lastModified": 1684264691,
+        "narHash": "sha256-EtMN0u/TQuMYuDptOBPq0N6DAhpBFo59xYPFtYWqH+c=",
+        "path": "/home/goose/prj/my-nix",
         "type": "path"
       },
       "original": {
-        "path": "..",
+        "path": "/home/goose/prj/my-nix",
         "type": "path"
       }
     },

@@ -35,7 +35,7 @@
         };
         in
         pkgs.writeScript "${binName}-fake" 
-          "DOTNET_ROOT=${dotnet} ${dotnet}/dotnet ${d}/tools/${arch}/${dllName}.dll";
+          "DOTNET_ROOT=${dotnet} ${dotnet}/dotnet ${d}/tools/${arch}/${dllName}.dll $@";
     in
     pkgs.runCommand "tools" {} (''
       mkdir -p $out/bin
@@ -110,6 +110,14 @@
       dllName = "dotnet-script";
       version = "1.4.0"; arch = "net6.0/any";
       sha256 = "sha256-89MjYSixnppAFuAL+C98ILXMryRw2LFThOiHxa7Fr5w=";
+    };
+
+    draco-ls = {
+      binName = "draco-langserver";
+      nugetName = "Draco.LanguageServer";
+      dllName = "Draco.LanguageServer";
+      version = "0.2.0-pre"; arch = "net7.0/any";
+      sha256 = "sha256-99O6ri5Ny+puXH18GKig+TwQBfzFd+p4Gp7abLzVxIU=";
     };
   };
 }
