@@ -112,7 +112,7 @@
       sha256 = "sha256-89MjYSixnppAFuAL+C98ILXMryRw2LFThOiHxa7Fr5w=";
     };
 
-    draco-ls = {
+    draco-langserver = {
       binName = "draco-langserver";
       nugetName = "Draco.LanguageServer";
       dllName = "Draco.LanguageServer";
