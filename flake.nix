@@ -1,5 +1,6 @@
 {
   outputs = { self, ... }: {
+    dotnetTool = pkgs: pkgs.callPackage ./dotnet-tool.nix {};
     dotnetShell = pkgs: sdks: tools: pkgs.mkShell rec {
       dotnetPkg = pkgs.dotnetCorePackages.combinePackages (sdks pkgs.dotnetCorePackages);
 
