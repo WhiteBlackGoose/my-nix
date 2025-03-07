@@ -26,9 +26,10 @@
         netcoredbg
       ] ++ deps;
 
+      DOTNET_ROOT = "${dotnetPkg}";
+
       shellHook = 
       ''
-        DOTNET_ROOT="${dotnetPkg}";
         PATH="~/.dotnet/tools:$PATH";
       '';
     };

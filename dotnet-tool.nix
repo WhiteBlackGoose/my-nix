@@ -35,7 +35,7 @@
         };
         in
         pkgs.writeScript "${binName}-fake" 
-          "DOTNET_ROOT=${dotnet} ${dotnet}/dotnet ${d}/tools/${arch}/${dllName}.dll $@";
+          "DOTNET_ROOT=${dotnet} ${dotnet}/bin/dotnet ${d}/tools/${arch}/${dllName}.dll $@";
     in
     pkgs.runCommand "tools" {} (''
       mkdir -p $out/bin
