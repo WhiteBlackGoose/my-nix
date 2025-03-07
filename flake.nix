@@ -24,7 +24,6 @@
       packages = with pkgs; [ 
         omnisharp-roslyn
         netcoredbg
-        msbuild
       ] ++ deps;
 
       shellHook = 
